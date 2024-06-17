@@ -27,7 +27,7 @@ const TodoForm: React.FC<TodoFormProps> = ({ setTodos }) => {
         value={newTodoText}
         onChange={(e) => setNewTodoText(e.target.value)}
         autoFocus={true}
-        placeholder="Add a task"
+        placeholder="Add a new task"
       />
         <button type="submit">
           <MdAdd />

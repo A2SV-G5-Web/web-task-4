@@ -4,18 +4,18 @@
   --input-background: #fff;
   --input-placeholder: #cbd1dc;
 
-  --input-border-focus: #275efe;
+  --input-border-focus: #94DEA5;
   --green-color: #e9ffee;
   --red-color: #ffe9e9;
   --yellow-color: #ffffe9;
 
   --group-color: var(--input-color);
   --group-border: var(--input-border);
-  --group-background: #eef4ff;
+  --group-background: #e9f1ee;
 
   --group-color-focus: #fff;
   --group-border-focus: var(--input-border-focus);
-  --group-background-focus: #678efe;
+  --group-background-focus: #94DEA5;
 }
 
 body {

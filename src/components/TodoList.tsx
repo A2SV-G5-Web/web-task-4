@@ -3,7 +3,7 @@ import ToDo from "../types/todo";
 import TodoService from "../services/TodoService";
 import TodoForm from "./TodoForm";
 import { FaEdit, FaCheck, FaSave } from "react-icons/fa";
-import { MdCancel, MdDelete, MdDone, MdRemoveDone } from "react-icons/md";
+import { MdCancel, MdDelete, MdRemoveDone } from "react-icons/md";
 import "../styles/TodoList.css";
 
 const TodoList = () => {
