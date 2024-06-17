@@ -1,6 +1,6 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Task 4: Building a Simple Todo List App with React and Typescript
+Congratulations on completing Task 4 of the Web Learning Path! Below is the solution for creating a simple todo app using 
+React and Typescript.
 
 ## Available Scripts
 
