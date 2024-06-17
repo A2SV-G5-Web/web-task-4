@@ -1,0 +1,155 @@
+:root {
+  --input-color: #99a3ba;
+  --input-border: #cdd9ed;
+  --input-background: #fff;
+  --input-placeholder: #cbd1dc;
+
+  /* --input-border-focus: #275efe; */
+
+  --group-color: var(--input-color);
+  --group-border: var(--input-border);
+  --group-background: #eef4ff;
+
+  --group-color-focus: #fff;
+  --group-border-focus: var(--input-border-focus);
+  --group-background-focus: #678efe;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.todoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  max-width: 540px;
+
+  padding: 4rem;
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  max-width: 540px;
+  justify-content: center;
+}
+
+.todo-item {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.01);
+  display: flex;
+  max-width: 100%;
+  margin: 10px;
+  overflow: hidden;
+  width: 700px;
+  padding: 30px;
+  max-width: 540px;
+  justify-content: space-between;
+  text-align: left;
+  text-overflow: ellipsis;
+  
+}
+
+.completed {
+  text-decoration: line-through;
+  background-color: #e9ffee;
+}
+
+.todo-item .todo-text {
+  color: #4e5565;
+}
+
+.ctrl-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ctrl-btns button {
+  background-color: #fff;
+  border: 1px solid #cdd9ed;
+  border-radius: 6px;
+  color: #99a3ba;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 16px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.done-ctrl-btns button {
+  background-color: #e9ffee;
+}
+
+
+.edit-form-field {
+  display: block;
+  width: 440px;
+  max-width: 440px;
+
+  padding: 8px 16px;
+  line-height: 25px;
+  font-size: 14px;
+  /* font-weight: 500; */
+  font-family: inherit;
+  border-radius: 6px;
+  color: var(--input-color);
+  border: 0px solid var(--input-border);
+  background: var(--input-background);
+  transition: border 0.3s ease;
+  &::placeholder {
+    color: var(--input-placeholder);
+  }
+  &:focus {
+    outline: none;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
+  }
+}
+
+.edited-text {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 0.5rem;
+}
+
+.edit-btns {
+    display: flex;
+    gap: 0.5rem;
+
+}
+ 
+.edited-text button{
+    background-color: #fff;
+    border: 1px solid #cdd9ed;
+    border-radius: 6px;
+    color: #99a3ba;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 16px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.save-btn:hover, .done-btn:hover {
+    background-color: #e9ffee;
+}
+.ctrl-btns .edit-btn:hover{
+    background-color: #ffffe9;
+}
+.cancel-btn:hover, .delete-btn:hover, .undo-btn:hover {
+    background-color: #ffe9e9;
+}
