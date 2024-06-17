@@ -33,6 +33,10 @@ const TodoList = () => {
   };
 
   const handleDelete = (id: number) => {
+    if (id === editingTodoId) {
+      handleEditCancel();
+    }
+
     TodoService.deleteTodo(id);
     setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
   };
