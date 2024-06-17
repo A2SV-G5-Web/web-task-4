@@ -3,7 +3,7 @@ import ToDo from "../types/todo";
 import TodoService from "../services/TodoService";
 import TodoForm from "./TodoForm";
 import { FaEdit, FaCheck, FaSave } from "react-icons/fa";
-import { MdCancel, MdDelete, MdDone } from "react-icons/md";
+import { MdCancel, MdDelete, MdDone, MdRemoveDone } from "react-icons/md";
 import "../styles/TodoList.css";
 
 const TodoList = () => {
@@ -20,9 +20,9 @@ const TodoList = () => {
     setEditedTodoText("");
   };
 
-  const handleEditSave = (id: number) => {
+  const handleEditSave = (id: number, completed: boolean) => {
     if (editedTodoText.trim() !== "") {
-      const updateTodo = { id, text: editedTodoText, completed: false };
+      const updateTodo = { id, text: editedTodoText, completed: completed };
       TodoService.updateTodo(updateTodo);
       setTodos((prevTodos) =>
         prevTodos.map((todo) => (todo.id === id ? updateTodo : todo))
@@ -37,7 +37,7 @@ const TodoList = () => {
     setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
   };
 
-  const handleToDoDone = (id: number, text:string, completed:boolean) => {
+  const handleToDoDone = (id: number, text: string, completed: boolean) => {
     const updateTodo = { id, text: text, completed: true };
 
     if (completed) {
@@ -47,16 +47,19 @@ const TodoList = () => {
     setTodos((prevTodos) =>
       prevTodos.map((todo) => (todo.id === id ? updateTodo : todo))
     );
-  }
+  };
 
   return (
-    <div className="todoContainer">
+    <div className="todo-container">
       {/* form goes here */}
       <TodoForm setTodos={setTodos}></TodoForm>
 
       <div className="todo-list">
         {todos.map((todo) => (
-          <div className={`todo-item ${todo.completed ? "completed" : ""}`} key={todo.id}>
+          <div
+            className={`todo-item ${todo.completed ? "completed" : ""}`}
+            key={todo.id}
+          >
             {editingTodoId === todo.id ? (
               <div className={`edited-text ${todo.completed ? "" : ""}`}>
                 <input
@@ -68,15 +71,18 @@ const TodoList = () => {
                 />
 
                 <div className="edit-btns">
-                <button className="save-btn" onClick={() => handleEditSave(todo.id)}>
-                  <FaSave />
-                </button>
-                <button
-                  className="cancel-btn"
-                  onClick={() => handleEditCancel()}
-                >
-                  <MdCancel />
-                </button>
+                  <button
+                    className="save-btn"
+                    onClick={() => handleEditSave(todo.id, todo.completed)}
+                  >
+                    <FaSave />
+                  </button>
+                  <button
+                    className="cancel-btn"
+                    onClick={() => handleEditCancel()}
+                  >
+                    <MdCancel />
+                  </button>
                 </div>
               </div>
             ) : (
@@ -84,14 +90,27 @@ const TodoList = () => {
                 <span>{todo.text}</span>
               </div>
             )}
-            <div className={`ctrl-btns ${todo.completed ? "done-ctrl-btns" : ""}`}>
-            <button className={` ${todo.completed ? "undo-btn" : "done-btn"}`} onClick={() => handleToDoDone(todo.id, todo.text, todo.completed)}>
-                <FaCheck />
+            <div
+              className={`ctrl-btns ${todo.completed ? "done-ctrl-btns" : ""}`}
+            >
+              <button
+                className={` ${todo.completed ? "undo-btn" : "done-btn"}`}
+                onClick={() =>
+                  handleToDoDone(todo.id, todo.text, todo.completed)
+                }
+              >
+                {todo.completed ? <MdRemoveDone /> : <FaCheck />}
               </button>
-              <button className="edit-btn" onClick={() => handleEditStart(todo.id, todo.text)}>
+              <button
+                className="edit-btn"
+                onClick={() => handleEditStart(todo.id, todo.text)}
+              >
                 <FaEdit />
               </button>
-              <button className="delete-btn" onClick={() => handleDelete(todo.id)}>
+              <button
+                className="delete-btn"
+                onClick={() => handleDelete(todo.id)}
+              >
                 <MdDelete />
               </button>
             </div>

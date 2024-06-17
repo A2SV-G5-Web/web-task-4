@@ -1,19 +1,4 @@
-/* :root {
-  --input-color: #99a3ba;
-  --input-border: #cdd9ed;
-  --input-background: #fff;
-  --input-placeholder: #cbd1dc;
 
-  --input-border-focus: #e9ffee;
-
-  --group-color: var(--input-color);
-  --group-border: var(--input-border);
-  --group-background: #eef4ff;
-
-  --group-color-focus: #fff;
-  --group-border-focus: var(--input-border-focus);
-  --group-background-focus: #e9ffee;
-} */
 
 .form-field {
   display: block;
@@ -41,7 +26,9 @@
 .form-group {
   position: relative;
   display: flex;
-  width: 100%;
+  width: 540px;
+  max-width: 540px;
+
   & > button,
   .form-field {
     white-space: nowrap;

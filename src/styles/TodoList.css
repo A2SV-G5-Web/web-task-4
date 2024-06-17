@@ -1,31 +1,6 @@
-:root {
-  --input-color: #99a3ba;
-  --input-border: #cdd9ed;
-  --input-background: #fff;
-  --input-placeholder: #cbd1dc;
 
-  /* --input-border-focus: #275efe; */
 
-  --group-color: var(--input-color);
-  --group-border: var(--input-border);
-  --group-background: #eef4ff;
-
-  --group-color-focus: #fff;
-  --group-border-focus: var(--input-border-focus);
-  --group-background-focus: #678efe;
-}
-
-body {
-  font-family: "Roboto", sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f5f5f5;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.todoContainer {
+.todo-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -50,7 +25,6 @@ body {
   border-radius: 10px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.01);
   display: flex;
-  max-width: 100%;
   margin: 10px;
   overflow: hidden;
   width: 700px;
@@ -59,12 +33,11 @@ body {
   justify-content: space-between;
   text-align: left;
   text-overflow: ellipsis;
-  
 }
 
 .completed {
   text-decoration: line-through;
-  background-color: #e9ffee;
+  background-color: var(--green-color);
 }
 
 .todo-item .todo-text {
@@ -90,21 +63,16 @@ body {
 }
 
 .done-ctrl-btns button {
-  background-color: #e9ffee;
+  background-color: var(--green-color);
 }
-
 
 .edit-form-field {
   display: block;
   width: 440px;
   max-width: 440px;
 
-  padding: 8px 16px;
-  line-height: 25px;
-  font-size: 14px;
-  /* font-weight: 500; */
+  font-size: 1rem;
   font-family: inherit;
-  border-radius: 6px;
   color: var(--input-color);
   border: 0px solid var(--input-border);
   background: var(--input-background);
@@ -114,42 +82,43 @@ body {
   }
   &:focus {
     outline: none;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
   }
 }
 
 .edited-text {
-    
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-    gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 0.5rem;
 }
 
 .edit-btns {
-    display: flex;
-    gap: 0.5rem;
-
-}
- 
-.edited-text button{
-    background-color: #fff;
-    border: 1px solid #cdd9ed;
-    border-radius: 6px;
-    color: #99a3ba;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 500;
-    padding: 8px 16px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+  display: flex;
+  gap: 0.5rem;
 }
 
-.save-btn:hover, .done-btn:hover {
-    background-color: #e9ffee;
+.edited-text button {
+  background-color: #fff;
+  border: 1px solid #cdd9ed;
+  border-radius: 6px;
+  color: #99a3ba;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 16px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
-.ctrl-btns .edit-btn:hover{
-    background-color: #ffffe9;
+
+.save-btn:hover,
+.done-btn:hover {
+  background-color: var(--green-color);
 }
-.cancel-btn:hover, .delete-btn:hover, .undo-btn:hover {
-    background-color: #ffe9e9;
+
+.ctrl-btns .edit-btn:hover {
+  background-color: var(--yellow-color);
+}
+.cancel-btn:hover,
+.delete-btn:hover,
+.undo-btn:hover {
+  background-color: var(--red-color);
 }
