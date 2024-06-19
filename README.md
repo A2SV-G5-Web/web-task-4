@@ -5,7 +5,10 @@ React and Typescript.
 
 
 
-## Solution Overview
+## Solution Overvie
+
+This application uses the browser's local storage to persist Todo Items, ensuring data is retained between sessions. It leverages TypeScript's robust type checks. And also it manages state and updates through the use of the `useState` and `useEffect` hooks, providing a dynamic user experience.\
+
 The src directory is structured as follows:
 * Components
   * TodoForm.tsx
