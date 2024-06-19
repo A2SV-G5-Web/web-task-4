@@ -7,13 +7,13 @@ React and Typescript.
 
 ## Solution Overview
 - Components
--- TodoForm.tsx
--- TodoList.tsx
+   TodoForm.tsx
+   TodoList.tsx
 - Services
--- TodoService.ts
+   TodoService.ts
 - Styles
--- TodoForm.css
--- TodoList.css
+   TodoForm.css
+   TodoList.css
 - App.tsx
 - App.css
 
