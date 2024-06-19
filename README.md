@@ -9,19 +9,22 @@ React and Typescript.
 
 This application uses the browser's local storage to persist Todo Items, ensuring data is retained between sessions. It leverages TypeScript's robust type checks. And also it manages state and updates through the use of the `useState` and `useEffect` hooks, providing a dynamic user experience.
 
-The src directory is structured as follows:
-* Components
-  * TodoForm.tsx
-  * TodoList.tsx
-* Services
-  * TodoService.ts
-* Styles
-  * TodoForm.css
-  * TodoList.css
-* App.tsx
-* App.css
 
-## Available Scripts
+# Project Folder Structure
+
+## src Directory
+- `Components/`
+  - `TodoForm.tsx`
+  - `TodoList.tsx`
+- `Services/`
+    - `TodoService.ts`
+- `Styles/`
+  - `TodoForm.css`
+  - `TodoList.css`
+- `App.css`
+- `App.tsx`
+
+## How 
 
 Clone the repositoroy:
 
