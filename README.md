@@ -6,6 +6,7 @@ React and Typescript.
 
 
 ## Solution Overview
+The src directory is structured as follows:
 * Components
   * TodoForm.tsx
   * TodoList.tsx
