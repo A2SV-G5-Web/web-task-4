@@ -15,8 +15,9 @@ const TodoService = {
   // ADD Todo
   addTodo: (text: string) => {
     const todos = TodoService.getTodos();
+    const maxId = Math.max(...todos.map(todo => todo.id), 0);
     const newTodo = {
-      id: todos.length + 1,
+      id: maxId + 1,
       text,
       completed: false,
     };

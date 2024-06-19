@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ToDo from "../types/todo";
 import TodoService from "../services/TodoService";
 import TodoForm from "./TodoForm";
@@ -52,7 +52,14 @@ const TodoList = () => {
       prevTodos.map((todo) => (todo.id === id ? updateTodo : todo))
     );
   };
+  useEffect(() => {
+    const fetchTodos = async () => {
+      const initialTodos = await TodoService.getTodos();
+      setTodos(initialTodos);
+    };
 
+    fetchTodos();
+  }, []);
   return (
     <div className="todo-container">
       {/* form goes here */}

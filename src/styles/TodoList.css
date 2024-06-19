@@ -32,7 +32,11 @@
   max-width: 540px;
   justify-content: space-between;
   text-align: left;
-  text-overflow: ellipsis;
+  text-overflow: ellipsis;;
+}
+
+.todo-item .todo-text {
+  max-width: 500px;
 }
 
 .completed {
