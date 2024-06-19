@@ -6,16 +6,16 @@ React and Typescript.
 
 
 ## Solution Overview
-- Components
+* Components
    TodoForm.tsx
    TodoList.tsx
-- Services
+* Services
    TodoService.ts
-- Styles
+* Styles
    TodoForm.css
    TodoList.css
-- App.tsx
-- App.css
+* App.tsx
+* App.css
 
 ## Available Scripts
 
